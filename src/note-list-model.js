@@ -1,10 +1,11 @@
 'use strict';
 
 function List() {
-  // this.array = ['My favourite language is JavaScript', 'Favourite drink: seltzer']
   this.array = []
+  this.note = new Note()
 }
 
 List.prototype.newNote = function(text) {
-  this.array.push(text)
+  this.note.insertText(text)
+  this.array.push(this.note.text)
 }

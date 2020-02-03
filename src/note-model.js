@@ -1,5 +1,9 @@
 'use strict';
 
 function Note() {
-  this.text = 'My favourite language is JavaScript'
+  this.text = null
+}
+
+Note.prototype.insertText = function(text) {
+  this.text = text
 }
