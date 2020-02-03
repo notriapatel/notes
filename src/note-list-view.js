@@ -2,10 +2,10 @@
 
 function View() {
   this.list = new List()
+  this.array = null
   this.string = null
 }
 
-View.prototype.createString = function(text) {
-  this.list.newNote(text)
-  this.string = this.list.array[0]
+View.prototype.createString = function() {
+  this.string =  '<ul><li><div>' + this.array.join('</div></li><li><div>') + "</div></li></ul>"
 }
