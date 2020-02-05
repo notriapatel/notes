@@ -1,8 +1,20 @@
-function testReturnsHTMLList() {
-  var view = new View();
-  view.array = ["Favourite food: pesto", "Favourite drink: seltzer"]
-  view.createString()
-  assert.isTrue(view.string === "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>")
-}
+(function(exports){
+  function testReturnsHTMLList() {
+    var list = new List()
+    list.newNote("Favourite food: pesto")
+    list.newNote("Favourite drink: seltzer")
 
-testReturnsHTMLList();
+    var view = new View();
+    view.inputList(list.array)
+    view.createString()
+
+    if (view.string !== "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>") {
+      throw new Error("Assertion is not truthy")
+    } else {
+      console.log("all good")
+    }
+  }
+  
+  
+  testReturnsHTMLList();
+})(this);

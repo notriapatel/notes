@@ -1,11 +1,18 @@
 'use strict';
 
-function View() {
-  this.list = new List()
-  this.array = null
-  this.string = null
-}
+(function(exports) {
+  function View() {
+    this.array = null
+    this.string = null
+  }
 
-View.prototype.createString = function() {
-  this.string =  '<ul><li><div>' + this.array.join('</div></li><li><div>') + "</div></li></ul>"
-}
+  View.prototype.inputList = function(list) {
+    this.array = list
+  }
+
+  View.prototype.createString = function() {
+    this.string = '<ul><li><div>' + this.array.join('</div></li><li><div>') + '</div></li></ul>'
+  }
+  
+  exports.View = View
+})(this)
