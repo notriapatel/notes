@@ -1,11 +1,16 @@
 'use strict';
 
-function List() {
-  this.array = []
-  this.note = new Note()
-}
+(function(exports) {
 
-List.prototype.newNote = function(text) {
-  this.note.insertText(text)
-  this.array.push(this.note.text)
-}
+  function List() {
+    this.array = []
+    this.note = new Note()
+  }
+
+  List.prototype.newNote = function(text) {
+    this.note.insertText(text)
+    this.array.push(this.note.text)
+  }
+  exports.List = List
+
+})(this)

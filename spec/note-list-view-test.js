@@ -10,9 +10,7 @@
 
     if (view.string !== "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>") {
       throw new Error("Assertion is not truthy")
-    } else {
-      console.log("all good")
-    }
+    } 
   }
   
   
